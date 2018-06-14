@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>Imaginary Inn</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="java.js"></script>
+    </head>
+
+    <body>
+        <div id="everything">
+            
+            <div id="guest">
+            <h1>Estimated Cost of Stay</h1>
+            <div id="error"><b style="color:darkblue;"/>ERROR! MISSING/INCORRECT INFORMATION: </b> <div id="missinginfo"></div></div>
+        <form id="input">
+            <fieldset>
+                <legend>Guest Information</legend>
+                    <table>
+                        <tr><th>First Name:</th> <td><input type="text" name="contact" id="firstname"></td></tr>
+                        <tr><th>Last Name:</th> <td><input type="text" name="contact" id="lastname"></td></tr>
+                        <tr><th>Phone Number:</th> <td><input type="number" name="contact" id="phone"></td></tr>
+                    </table>
+                    <table>
+                        <tr><th>Estimated Nights:</th> <td><input type="number" name="stay" id="nights"></td> <th>Estimated Guests:</th> <td><input type="number" name="stay" id="guests"></td></tr>
+                    </table>
+            </fieldset>
+            <fieldset>
+                <legend>Which room would you like?</legend>
+                <group class="inline-radio">
+                    <div class="rooms"><input type="radio" name="room" id="1Q" value="119">
+                            <label><h4>ROOM A</h4><br>
+                                <img src="https://i.imgur.com/oaOnZoN.png"><br>
+                                $119 / NIGHT<br>
+                                <small>One queen bed.</small>
+                            </label>
+                    </div>
+                    <div class="rooms"><input type="radio" name="room" id="2Q" value="139">
+                        <label><h4>ROOM B</h4><br>
+                            <img src="https://i.imgur.com/uAOdcMA.png"><Br>
+                            $139 / NIGHT<br>
+                            <small>Two queen beds.</small>
+                        </label>
+                    </div>
+                </group>
+            </fieldset>
+            <fieldset>
+                <legend>How many pets will you be bringing?</legend>
+                <group class="inline-radio">
+                    <div class="pets"><input type="radio" name="pets" id="0P" value="0">
+                        <label><h5>NO PETS</h5>
+                        <small>No additional fee.</small></label>
+                    </div>
+                    <div class="pets"><input type="radio" name="pets" id="1P" value="25">
+                        <label><h5>ONE PET</h5>
+                        <small>$25 / STAY</small></label>
+                    </div>
+                    <div class="pets"><input type="radio" name="pets" id="2P" value="45">
+                        <label><h5>TWO PETS</h5>
+                        <small>$45 / STAY</small></label>
+                    </div>
+                </group>
+            </fieldset>
+            <fieldset>
+                <legend>Would you like any extras?</legend>
+                <blockquote>At an additional fee, you can have these features... No items have to be selected to continue.</blockquote>
+                <group class="inline-radio">
+                    <div class="extras"><input type="checkbox" name="extras" id="C" value="10">
+                        <label><h5>SINGLE COT</h5>
+                        <small>+ $10 / NIGHT</small></label>
+                    </div>
+                    <div class="extras"><input type="checkbox" name="extras" id="W" value="15">
+                        <label><h5>BOTTLE OF WINE</h5>
+                        <small>+ $15</small></label>
+                    </div>
+                    <div class="extras"><input type="checkbox" name="extras" id="S" value="10">
+                        <label><h5>SNACKS</h5>
+                        <small>+ $10 / PERSON</small></label>
+                    </div>
+                </group>
+            </fieldset>
+            <br>
+            <input type="button" onclick="validate();" value="Get My Bill">
+        </form>
+        </div>
+
+        <div id="bill">
+                <div id="outputName"><p></p></div>
+                <div id="outputNumber"><p></p></div><Br>
+        
+                <table class="stayinfo">
+                    <tr><th>Estimated Nights</th><th>Estimated Guests</th></tr>
+                    <td><div id="outputNight1"><p></p></div></td><td><div id="outputGuests1"><p></p></div></td>
+                </table>
+                
+                <h3>Calculations</h3>
+        
+                <table class="bill">
+                    <tr class="btable"><th> </th> <th>Rate</th> <th>Quantity</th> <th>Cost</th> </tr>
+                    <tr><th class="bheader">Room & Board</th> <td></td> <td></td> <td></td></tr>
+                    <tr><td><div id="outputRoom"><p></p></div></td> <td><div id="outputRate"><p></p></div></td> <td><div id="outputNight2"><p></p></div></td>  <td><div id="outputRooming"><p></p></div></td> </tr>
+                    <tr><td></td> <td></td> <td></td> <td></td></tr>
+                    <tr><th class="bheader">Additional Fees</th> <td></td> <td></td> <td></td></tr>
+                    <tr><td><div id="petSelected"><p></p></div></td> <td><div id="oPetFee1"><p></p></div></td> <td><div id="oPetCt"><p></p></div></td> <td><div id="oPetFee2"><p></p></div></td> </tr></div>
+                    <tr><td>Cot</td> <td><div id="cotFee"><p></p></div></td>  <td><div id="outputNight3"><p></p></div></td> <td><div id="cotSubtotal"><p></p></div></td> </tr>
+                    <tr><td>Wine</td> <td><div id="wineFee"><p></p></div></td> <td><div id="wineBottles"><p></p></div></td>  <td><div id="wineSubtotal"><p></p></div></td> </tr>
+                    <tr><td>Snacks</td> <td><div id="snackFee"><p></p></div></td> <td><div id="snackGuests"><p></p></div></td>  <td><div id="snackSubtotal"><p></p></div></td> </tr>
+                    <tr><td></td> <td></td> <td></td> <td></td></tr>
+                    <tr><td></td> <td></td> <td></td> <td></td></tr>
+                    <tr><th> </th> <th></th> <th></th> <th>Subtotal</th> </tr>
+                    <tr><td></td> <td></td> <td></td>  <td><div id="subtotal"><p></p></div></td> </tr>
+                </table>
+        
+                <blockquote>Please note that this is <b>not your final bill</b>. Your final bill, including taxes and room surcharges, will be given to you at checkout.</blockquote>
+                
+        </div>
+
+        </div>
+    </body>
+
+</html>

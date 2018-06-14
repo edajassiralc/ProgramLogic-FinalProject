@@ -1,0 +1,178 @@
+body {
+    background:aliceblue;
+    font-family:sans-serif;
+    font-size:14px;
+}
+
+#everything {
+    background:#ffffff;
+    width:65%;
+    margin:0;padding:10px;
+    position:absolute;left:20%;right:20%;top:0px;
+}
+
+#guest {
+    display:inline;
+}
+
+blockquote {
+    margin-left:7px;padding-left:7px;
+    font-size:12px;font-style:italic; letter-spacing: 1px;
+}
+
+h1 {
+    font-size:54px;
+    color:lightblue;
+    text-shadow:1px 1px darkblue;
+    text-align:center;
+}
+
+legend {
+    color:darkblue;
+    text-shadow:1px 1px lightblue;
+    font-size:20px;font-weight:900;
+    letter-spacing:2px;
+}
+
+h3 { margin:0px; padding:10px;}
+
+h4 { margin:0px; padding:10px;
+    background:lightblue;
+color:white;
+    font-size:20px; letter-spacing:3px;}
+
+h5 {
+    margin:0px;padding:10px;margin-bottom:5px;
+    background:lightblue;color:white;
+    font-size:15px;letter-spacing:2px;
+}
+
+table {
+    background:whitesmoke;width:100%;
+    text-align:center;
+}
+
+th {
+    text-align:left;width:200px;
+    text-transform:uppercase;font-weight:bolder;
+    font-size:14px;letter-spacing:2px;
+}
+
+tr {
+    height:25px;margin:3px;
+}
+
+input {
+    border:2px solid lightblue;
+    border-radius:4px;
+    background:white; width:100%
+}
+
+.rooms {
+    height:290px;
+}
+
+.pets {
+    height:40px;
+    padding:10px;
+}
+
+.extras {
+    height:50px;
+}
+
+fieldset {
+    border:none;
+    margin-bottom:10px;margin-top:10px;
+}
+
+.inline-radio {
+    display: flex;
+    overflow: hidden;
+}
+
+.inline-radio input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+  
+.extras, .rooms, .pets {
+    position: relative;
+    flex: 1;
+    margin:4px;padding-top:10px;
+    border:2px solid lightblue;
+}
+
+  
+label {
+    position: absolute;
+    top: 0; left: 0;
+    text-align:center;
+    width: 100%; height: 100%;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+input:checked + label {
+    background: lightblue;
+    font-weight: 500;
+    color: #fff;
+}
+
+#error {
+    display:none;
+    text-align:center;
+    padding:10px;margin:20px;
+}
+
+#error span {
+    text-transform:uppercase;
+    text-shadow:1px 1px white;
+    margin-right:6px;
+    width:auto;height:auto;
+}
+
+#missinginfo {
+    text-align:left;
+    margin-left:100px;
+}
+
+/* BILL STYLING */
+
+#bill {
+    display:none;
+}
+
+#bill table {
+    width:100%;
+    background:white;
+}
+
+#bill table, th, td {
+    border-bottom:1px solid rgb(214, 214, 214);
+    border-collapse: collapse;
+    font-size:12px;
+}
+#bill th, td {
+    height:20px;
+}
+
+#bill .stayinfo th {
+    background:lightblue; color:white;
+    font-size:20px; letter-spacing:1px;
+}
+
+#bill .bill {
+
+}
+
+.btable {
+    background:lightblue;color:white;
+}
+
+.bheader {
+    color:lightblue;font-size:14px;
+}
